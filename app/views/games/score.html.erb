@@ -1,0 +1,14 @@
+<p><%= @word %></p>
+
+
+<p><%= @letters %></p>
+
+<%if @included && @english %>
+ <p> <%= 'Congratulation u won' %></p>
+<%elsif @included && !@english  %>
+ <p> <%= 'is not an english words' %></p>
+<%elsif !@included && @english  %>
+ <p> <%= "can not be built out of #{@letters}" %></p>
+<% end %>
+
+<%= link_to 'play again', new_path %>
